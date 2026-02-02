@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+    int n,deci=0;
+    printf("Enter number = ");
+    scanf("%d",&n);
+    int temp=n;
+    int place=1;
+    while(temp!=0){
+        int rem = temp%10;
+        deci=deci+rem*place;
+        place=place*2;
+        temp=temp/10;
+    }
+    printf("Decimal of %d is %d",n,deci);
+    return 0;
+}
