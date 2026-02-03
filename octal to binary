@@ -1,0 +1,30 @@
+#include<stdio.h>
+int convertoctaltodecimal(int octnum){
+    int deci=0,place=1;
+    while(octnum!=0){
+        int rem=octnum%10;
+        deci=deci+rem*place;
+        place=place*8;
+        octnum=octnum/10;
+    }
+    return deci;
+}
+int convertdecimaltobinary(int decinum){
+    int bin=0,place=1;
+    while(decinum!=0){
+        int rem=decinum%2;
+        bin=bin+rem*place;
+        decinum=decinum/2;
+        place=place*10;
+    }
+    return bin;
+}
+int main(){
+    int n;
+    printf("Enter number = ");
+    scanf("%d",&n);
+    int deci=convertoctaltodecimal(n);
+    int oct=convertdecimaltobinary(deci);
+    printf("Binary of %d is %d",n,oct);
+    return 0;
+}
